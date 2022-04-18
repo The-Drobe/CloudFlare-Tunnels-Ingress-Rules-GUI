@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>SetUp</h1>
+    <form action="{{ url_for('SetUpConfirm')}}" method="post">
+        <input type="text" name="ApiKey" id="" placeholder="ApiKey">
+        <input type="text" name="RootDomain" id="" placeholder="RootDomain">
+        <input type="text" name="PathToCloudFlared" id="" placeholder="PathToCloudFlared">
+        <input type="text" name="UserName" id="" placeholder="UserName">
+        <input type="text" name="PassWord" id="" placeholder="PassWord">
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>

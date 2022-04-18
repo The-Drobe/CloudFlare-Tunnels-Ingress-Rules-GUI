@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetUpConfirm</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Please Confirm Your Settings</h1>
+    <p>ApiKey: {{ ApiKey }}</p>
+    <p>RootDomain: {{ RootDomain }}</p>
+    <p>PathToCloudFlared: {{ PathToCloudFlared }} </p>
+    <p>UserName: {{ UserName }} </p>
+    <p>PassWord: {{ PassWord }} </p>
+    <form action="{{ url_for('SetUpComplete')}}" method="post">
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
