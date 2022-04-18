@@ -1,2 +1,2 @@
-Docs Comming Soon:
+Docs Coming Soon:
 Default login is: FirstSetup, FirstSetup

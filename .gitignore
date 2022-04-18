@@ -9,3 +9,4 @@ Setup.txt.bak
 data/*
 # exception to the rule
 !data/.gitkeep
+gittoken
