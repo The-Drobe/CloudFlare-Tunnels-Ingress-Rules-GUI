@@ -49,7 +49,7 @@ def PasswordImport():
 # Imports that are needed for the app to work
 
 app = Flask(__name__)
-socketio = SocketIO(app, logger=True, engineio_logger=True)
+socketio = SocketIO(app,)
 app.secret_key = 'WhyAreYouGayWhoSaidIAmGay?'
 app.permanent_session_lifetime = timedelta(minutes=10)
 LastTimeRestarted = 0
@@ -265,7 +265,6 @@ def CloudFlaredRestart():
 @app.route('/login', methods=["POST", "GET"])
 def login():
     if request.method == "GET":
-        print("get")
         return render_template("login.html")
 
     if request.method == 'POST':
@@ -279,9 +278,7 @@ def login():
             return redirect(url_for('login'))
         else:
             user = user[0]
-        print(sha256_crypt.verify(password, user.password))
         if user and sha256_crypt.verify(password, user.password) is True:
-            print("aaaaaaaaaaaa")
             session['user_id'] = user.id
             return redirect(url_for('index'))
 
@@ -293,7 +290,7 @@ if __name__ == "__main__":
     ImportEnvVars()
     CloudFlaredTaskmanger.CloudFlaredTaskMangerStart()
     # app.run(debug=True, host="0.0.0.0", port=5000)
-    socketio.run(app, debug=True, use_reloader=False, host='0.0.0.0', port=5000)
+    socketio.run(app, debug=False, use_reloader=False, host='0.0.0.0', port=5000)
     # threading.Thread(target=web).start()
 else:
     CloudFlaredTaskmanger.CloudFlaredTaskMangerStop()
